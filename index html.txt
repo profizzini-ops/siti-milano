@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audioguida Milano</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #444;
+    }
+    nav a {
+      color: white;
+      padding: 1rem;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background: #666;
+    }
+    .content {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .content img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Audioguida Milano</h1>
+    <p>Esplora i principali siti di interesse turistico</p>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showContent('cenacolo')">Cenacolo</a>
+    <a href="#" onclick="showContent('santambrogio')">Sant'Ambrogio</a>
+    <a href="#" onclick="showContent('duomo')">Duomo</a>
+  </nav>
+
+  <div id="cenacolo" class="content hidden">
+    <h2>Cenacolo Vinciano</h2>
+    <img src="img/cenacolo.jpg" alt="Cenacolo">
+    <p>Breve descrizione del Cenacolo. (Inserisci qui la tua sinossi)</p>
+    <audio controls>
+      <source src="audio/cenacolo.mp3" type="audio/mpeg">
+      Il tuo browser non supporta l'audio.
+    </audio>
+  </div>
+
+  <div id="santambrogio" class="content hidden">
+    <h2>Basilica di Sant'Ambrogio</h2>
+    <img src="img/santambrogio.jpg" alt="Sant'Ambrogio">
+    <p>Breve descrizione della Basilica di Sant'Ambrogio. (Inserisci qui la tua sinossi)</p>
+    <audio controls>
+      <source src="audio/santambrogio.mp3" type="audio/mpeg">
+      Il tuo browser non supporta l'audio.
+    </audio>
+  </div>
+
+  <div id="duomo" class="content hidden">
+    <h2>Duomo di Milano</h2>
+    <img src="img/duomo.jpg" alt="Duomo">
+    <p>Breve descrizione del Duomo. (Inserisci qui la tua sinossi)</p>
+    <audio controls>
+      <source src="audio/duomo.mp3" type="audio/mpeg">
+      Il tuo browser non supporta l'audio.
+    </audio>
+  </div>
+
+  <script>
+    function showContent(id) {
+      document.querySelectorAll('.content').forEach(el => el.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
